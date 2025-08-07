@@ -3,6 +3,7 @@ package by.bogdanov.model;
 import jakarta.persistence.*;
 
 @Entity
+@NamedQuery(name = "Book.findByAuthor", query = "SELECT b FROM Book b WHERE b.author = :author")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

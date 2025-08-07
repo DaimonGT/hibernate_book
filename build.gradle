@@ -23,6 +23,7 @@ dependencies {
     implementation 'org.hibernate.orm:hibernate-core:7.0.9.Final'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation("org.ow2.asm:asm:9.8")
 }
 
 test {
@@ -37,4 +38,8 @@ shadowJar {
     archiveBaseName.set('book-manager')
     archiveClassifier.set('')
     archiveVersion.set('')
+}
+
+compileJava{
+    options.encoding = 'UTF-8'
 }
